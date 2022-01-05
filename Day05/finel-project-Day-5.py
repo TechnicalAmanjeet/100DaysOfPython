@@ -40,5 +40,18 @@ for i in range(symbols):
 
 print(f"Your password : {password}")
 
+
 # note : how to randomise them all other type letter at other place i.e
 # password of uppercase or lowercase or numbers or symbols must not in secquence.
+
+# solution of above problem is shuffel mathod of random.shuffle()
+# this mathod works on list only i think.
+password_list = []
+for passwd in password:
+    password_list.append(passwd)
+
+# print(password_list)
+
+random.shuffle(password_list)
+advance_password = "".join(password_list)
+print(f'advance password : {advance_password}')

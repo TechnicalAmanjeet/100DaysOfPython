@@ -16,16 +16,16 @@ def calculator(num1,operator,num2):
     else: print(f"{operator} is not a valid operator!")
 
 def taking_input_from_user_m1():
-    num1 = int(input("Enter first number : "))
+    num1 = float(input("Enter first number : "))
     print("+\n-\n*\n/\n%\n//")
     operator = input("Pick an operation : ")
-    num2 = int(input("What's the next number : "))
+    num2 = float(input("What's the next number : "))
     return [num1,operator,num2]
 
 def taking_input_from_user_m2(num1):
     print("+\n-\n*\n/\n%\n//")
     operator = input("Pick an operation : ")
-    num2 = int(input("What's the next number : "))
+    num2 = float(input("What's the next number : "))
     return [num1, operator, num2]
 
 

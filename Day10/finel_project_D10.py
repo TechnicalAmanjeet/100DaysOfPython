@@ -1,4 +1,7 @@
+import os
 
+from logo import logo
+from os import system
 
 # project : Calculator
 
@@ -28,6 +31,7 @@ def taking_input_from_user_m2(num1):
 
 if __name__ == '__main__':
     print("********** Calculator Game ************ \n")
+    print(logo)
     input_from_user = taking_input_from_user_m1()
     num1 = input_from_user[0]
     operator = input_from_user[1]
@@ -36,6 +40,8 @@ if __name__ == '__main__':
     print(f"{num1} {operator} {num2} = {output}")
 
     while True:
+        os.system('cls')
+        print(logo)
         print(f"""
         ********** Calculator Game ************ \n
         Type 1: To continue calculating with {output}.

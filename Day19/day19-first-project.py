@@ -19,6 +19,12 @@ def left():
     tim.setheading(180)
     tim.fd(20)
 
+def clear():
+    tim.penup()
+    tim.clear()
+    tim.home()
+    tim.pendown()
+
 def angle():
     tim.right(10)
     tim.fd(2)

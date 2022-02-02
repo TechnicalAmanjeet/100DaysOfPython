@@ -2,6 +2,7 @@ import time
 from turtle import Screen
 from middle_strip import MiddleStrip
 from paddle import Paddle
+from ball import Ball
 
 WIDTH_SCREEN = 1000
 HEIGHT_SCREEN = 600
@@ -21,6 +22,8 @@ screen.tracer(0)
 middle_strip = MiddleStrip()
 left_paddle = Paddle(LEFT_PADDLE_XCOR, LEFT_PADDLE_YCOR)
 right_paddle = Paddle(RIGHT_PADDLE_XCOR, RIGHT_PADDLE_YCOR)
+ball = Ball()
+
 screen.update()
 
 screen.tracer(1)
@@ -35,8 +38,16 @@ screen.onkey(right_paddle.up, "Up")
 screen.onkey(right_paddle.down, "Down")
 
 
+# Play game section starts from here.
+game_is_on = True
 
+while game_is_on:
+    ball.move()
 
+    # if ball will collid with right paddle.
+    if right_paddle.distance(ball) <= 15:
+        ball.setheading(180)
+        print("ram")
 
 
 screen.exitonclick()

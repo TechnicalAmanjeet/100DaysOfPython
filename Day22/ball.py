@@ -13,29 +13,25 @@ class Ball(Turtle):
         self.color("blue")
         self.penup()
         self.shapesize(1)
-        self.goto(-500, 0)
+        # self.goto(-500, 0)
 
-    def move(self):
-        if int(self.heading()) == 0:
-            if self.ycor() <= 280:
-                x_cor = self.xcor() + 10
-                y_cor = self.ycor() + 10
-                self.goto(x_cor, y_cor)
-            else:
-                self.setheading(270)
-        elif int(self.heading()) == 270:
-            if self.ycor() >= -280:
-                x_cor = self.xcor() + 10
-                y_cor = self.ycor() - 10
-                self.goto(x_cor, y_cor)
-            else:
-                self.setheading(0)
-
-        elif int(self.heading()) == 180:
-            x_cor = self.xcor() - 10
+    def move(self, first, second):
+        x_cor = 0
+        y_cor = 0
+        if first == "up":
             y_cor = self.ycor() + 10
-            self.goto(x_cor, y_cor)
+        if first == "down":
+            y_cor = self.ycor() - 10
+        if second == "right":
+            x_cor = self.xcor() + 10
+        if second == "left":
+            x_cor = self.xcor() - 10
+
+        self.goto(x_cor, y_cor)
+
+
+
 
 
         # print(self.ycor())
-        time.sleep(0.1)
+        time.sleep(0.05)

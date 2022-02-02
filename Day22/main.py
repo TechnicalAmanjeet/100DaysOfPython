@@ -41,13 +41,37 @@ screen.onkey(right_paddle.down, "Down")
 # Play game section starts from here.
 game_is_on = True
 
+first = "up"
+second = "right"
+
 while game_is_on:
-    ball.move()
+    ball.move(first, second)
 
-    # if ball will collid with right paddle.
-    if right_paddle.distance(ball) <= 15:
-        ball.setheading(180)
-        print("ram")
+    # left user loss
+    if ball.xcor() <= -500:
+        game_is_on = False
+        print("Left user loss the game.")
+    # right user loss
+    if ball.xcor() >= 500:
+        game_is_on = False
+        print("right user loss the game.")
 
+
+    # ball collision with upper wall
+    if ball.ycor() > 290:
+        first = "down"
+    # ball collision with lower wall
+    if ball.ycor() <= -280:
+        first = "up"
+
+
+    # ball collision with right paddle
+    if right_paddle.distance(ball) <= 20:
+        second = "left"
+        # print(first, second)
+
+    # ball collision with left paddle
+    if left_paddle.distance(ball) <= 20:
+        second = "right"
 
 screen.exitonclick()

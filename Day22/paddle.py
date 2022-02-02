@@ -1,8 +1,8 @@
 import time
 from turtle import Turtle
 
-PADDLE_WIDTH = 4
-PADDLE_LENGTH = 0.8
+PADDLE_WIDTH = 0.8
+PADDLE_LENGTH = 4
 UP_MAX = 290
 DOWN_MAX = -290
 
@@ -21,18 +21,18 @@ class Paddle(Turtle):
         self.color("white")
         self.shape("square")
         self.penup()
+        self.setheading(90)
         self.shapesize(stretch_wid=PADDLE_WIDTH, stretch_len=PADDLE_LENGTH)
-        self.goto((self.x_cor, self.y_cor))
+        self.setposition(self.x_cor, self.y_cor)
+        # print(self.x_cor, self.y_cor)
 
     def up(self):
-        """move paddle in upward direction."""
-        print(self.xcor(), self.ycor())
-        self.color("white")
-        self.fd(100)
-        print(self.x_cor, self.y_cor)
-        print()
+        if self.ycor() <= 250:
+            self.fd(20)
+            print(self.ycor())
 
-    def move(self):
-        self.fd(10)
-        print("moving forword")
-        time.sleep(0.6)
+    def down(self):
+        if self.ycor() >= -250:
+            self.fd(-20)
+            print(self.ycor())
+

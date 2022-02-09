@@ -38,6 +38,7 @@ while game_is_on:
         scoreboard.update_level()
 
     # move each car by some distance
+
     for car in car_manage:
         # end the game if player hits with the car.
         if car.distance(player) <= 20:

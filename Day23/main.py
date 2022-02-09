@@ -32,6 +32,10 @@ while game_is_on:
 
     # move each car by some distance
     for car in car_manage:
+        # end the game if player hits with the car.
+        if car.distance(player) <= 30:
+            game_is_on = False
+
         car.move()
         if car.xcor() == -330:
             car_manage.remove(car)
@@ -46,3 +50,6 @@ while game_is_on:
         car_manage.append(car)
         no_loops = 0
         print(len(car_manage))
+
+
+screen.exitonclick()

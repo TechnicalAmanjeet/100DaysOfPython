@@ -33,6 +33,8 @@ while game_is_on:
     # move each car by some distance
     for car in car_manage:
         car.move()
+        if car.xcor() == -330:
+            car_manage.remove(car)
 
     time.sleep(0.1)
     screen.update()
@@ -43,3 +45,4 @@ while game_is_on:
         car = CarManager()
         car_manage.append(car)
         no_loops = 0
+        print(len(car_manage))

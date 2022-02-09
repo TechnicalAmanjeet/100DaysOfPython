@@ -23,3 +23,5 @@ class Player(Turtle):
             self.goto(STARTING_POSITION)
             return True
         return False
+
+

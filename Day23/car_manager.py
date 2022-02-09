@@ -22,3 +22,7 @@ class CarManager(Turtle):
     def move(self):
         """move car by some distance."""
         self.fd(self.move_increment)
+
+    def move_increment_fun(self):
+        self.move_increment += MOVE_INCREMENT
+

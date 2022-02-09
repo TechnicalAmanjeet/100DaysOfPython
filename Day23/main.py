@@ -23,17 +23,21 @@ screen.onkey(player.up, "Up")
 
 game_is_on = True
 no_loops = 0
+level = 1
 # print(type(car_manage))
 
 while game_is_on:
     # check if player touches the finel line then level up by 1.
     if player.is_touch_finish_line():
+        for car in car_manage:
+            car.move_increment_fun()
+        level += 1
         print("level up")
 
     # move each car by some distance
     for car in car_manage:
         # end the game if player hits with the car.
-        if car.distance(player) <= 30:
+        if car.distance(player) <= 20:
             game_is_on = False
 
         car.move()
@@ -46,8 +50,9 @@ while game_is_on:
 
     # after every 6 times loop runs create one new object of car.
     if no_loops == 6:
-        car = CarManager()
-        car_manage.append(car)
+        for i in range(level):
+            car = CarManager()
+            car_manage.append(car)
         no_loops = 0
         print(len(car_manage))
 

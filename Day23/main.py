@@ -16,6 +16,8 @@ car_manage = []
 car = CarManager()
 car_manage.append(car)
 
+# create object of scoreboard
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(player.up, "Up")
@@ -32,12 +34,14 @@ while game_is_on:
         for car in car_manage:
             car.move_increment_fun()
         level += 1
-        print("level up")
+        scoreboard.clear()
+        scoreboard.update_level()
 
     # move each car by some distance
     for car in car_manage:
         # end the game if player hits with the car.
         if car.distance(player) <= 20:
+            scoreboard.game_over()
             game_is_on = False
 
         car.move()
@@ -54,7 +58,7 @@ while game_is_on:
             car = CarManager()
             car_manage.append(car)
         no_loops = 0
-        print(len(car_manage))
+        # print(len(car_manage))
 
 
 screen.exitonclick()

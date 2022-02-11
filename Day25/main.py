@@ -36,7 +36,7 @@ with open("./weather_data.csv") as csv_file:
             # print(index_of_temp)
             index += 1
         else:
-            temp.append(row[index_of_temp])
+            temp.append(int(row[index_of_temp]))
             day.append(row[index_of_day])
             condition.append(row[index_of_condition])
     print(day, temp, condition)

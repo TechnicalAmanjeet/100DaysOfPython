@@ -101,6 +101,6 @@ max_temp_row = temp_data[temp_data.temp == temp_data.temp.max()]
 min_temp_row = temp_data[temp_data.temp == temp_data.temp.min()]
 # print(min_temp_row)
 
-# 6. get temp of monday and convert it to farenhite. ( 0 celcius = 32 fahrenhite)
-monday_temp = temp_data[temp_data.day == "Monday"].temp() + 32
-print(monday_temp)
+# 6. get temp of monday and convert it to farenhite. (  celcius_temp * 9/5 + 32 = fahrenhite)
+monday_temp = float(temp_data[temp_data.day == "Monday"].temp * 9 / 5 + 32)
+print(f"Monday's temp in fahrenhite : {monday_temp}")

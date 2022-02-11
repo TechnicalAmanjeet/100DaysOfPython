@@ -45,5 +45,17 @@ import csv
 import pandas as pd
 
 temp_data = pd.read_csv("weather_data.csv")
-print(temp_data)
+# print(temp_data)
 
+# extract temprature from above data file.
+
+temp_series = temp_data["temp"]
+# print(temp_series)
+
+# convert pandas series datatype into python list
+temp_list = temp_series.to_list()
+# print(temp_list)
+
+# find avg temp of this weak.
+avg_temp = sum(temp_list) / len(temp_list)
+print(f"Avg temp of this weak : {round(avg_temp,2)}")

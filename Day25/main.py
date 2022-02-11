@@ -65,4 +65,8 @@ temp_data = pd.read_csv("weather_data.csv")
 temp_series = temp_data["temp"]
 # find mean value directly by using pandas series method.
 avg_temp = temp_series.mean()
-print(f"Avg temp of this weak : {round(avg_temp, 2)}")
+# print(f"Avg temp of this weak : {round(avg_temp, 2)}")
+
+# find max value.
+max_temp = temp_series.max()
+print(f"Max temp of this weak is : {max_temp}")

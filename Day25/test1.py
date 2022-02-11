@@ -164,7 +164,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 36,
+   "execution_count": 37,
    "metadata": {},
    "outputs": [
     {
@@ -187,7 +187,7 @@
     "toXarray = pandas_dataframe.to_xarray()\n",
     "print(toXarray)\n",
     "\n",
-    "with open(\"xarray\", \"w\") as file:\n",
+    "with open(\"xarray.txt\", \"w\") as file:\n",
     "    file.write(str(toXarray))"
    ]
   },

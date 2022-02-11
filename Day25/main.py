@@ -46,6 +46,8 @@ import pandas as pd
 
 temp_data = pd.read_csv("weather_data.csv")
 # print(temp_data)
+day = temp_data.condition
+# print(day)
 
 # extract temprature from above data file.
 
@@ -69,4 +71,36 @@ avg_temp = temp_series.mean()
 
 # find max value.
 max_temp = temp_series.max()
-print(f"Max temp of this weak is : {max_temp}")
+# print(f"Max temp of this weak is : {max_temp}")
+
+# how to find a particular row which satisfy some condition
+
+# 1. row whos day is Monday
+x = temp_data.day == "Monday"
+# print(temp_data[temp_data.day == "Monday"])
+
+# 2. row whose temp is 14
+row = temp_data.temp == 14
+# print(temp_data[row])
+
+# 3. row whose condition is sunny
+row_cond = temp_data.condition == "Sunny"
+# print(temp_data[row_cond])
+
+# 4. row whose temp is max among the all.
+# method 1.
+max_temp_data = temp_data.temp.max()
+row_max_temp = temp_data.temp == max_temp_data
+# print(temp_data[row_max_temp])
+
+# method 2.
+max_temp_row = temp_data[temp_data.temp == temp_data.temp.max()]
+# print(max_temp_row)
+
+# 5. row whos temp is min among the all
+min_temp_row = temp_data[temp_data.temp == temp_data.temp.min()]
+# print(min_temp_row)
+
+# 6. get temp of monday and convert it to farenhite. ( 0 celcius = 32 fahrenhite)
+monday_temp = temp_data[temp_data.day == "Monday"].temp() + 32
+print(monday_temp)

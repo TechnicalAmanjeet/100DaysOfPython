@@ -1,14 +1,12 @@
-# challange 1.
-string = "Amanjeet"
-new_list = [alphabet for alphabet in string]
-# print(len(new_list))
+numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+# 🚨 Do Not Change the code above 👆
 
-#challange 2
-new_list = [number * 2 for number in range(0, 11)]
-print(new_list)
+#Write your 1 line code 👇 below:
 
-# challenge 3.
-names = ["Amanjeet", "Kajal", "Riya", "Neha", "abp", "kismat", "Anjali", "a", "b"]
+squared_numbers = [number * number for number in numbers]
 
-new_names_list = [name.upper() for name in names if len(name) > 3]
-print(new_names_list)
+#Write your code 👆 above:
+
+print(squared_numbers)
+
+

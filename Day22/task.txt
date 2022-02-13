@@ -1,4 +1,8 @@
 ***** need to be done ******
-1. add moving functionality to padddle class
-2. add ball class
 3. add scoreboard object
+
+****** done ******
+1. add moving functionality to padddle class => done
+2. add ball class => done
+
+

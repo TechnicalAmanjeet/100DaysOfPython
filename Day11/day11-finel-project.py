@@ -1,6 +1,7 @@
 import random
 
 while True:
+    print("\n\n***** Game Start ******* \n\n")
     user_decision = input("Do you want to play a game of Blackjack? Type 'y' or 'n' : ")
 
     if user_decision == 'y':
@@ -12,11 +13,12 @@ while True:
         computers_card.append(random.randint(1,10))
 
 
-        while sum(user_card)<=21 and sum(computers_card)<=21:
+        while True:
             print(f"Your card's : {user_card}")
             print(f"computer's first card : {computers_card}")
 
             user_decision = input("Type 'y' to get another card , type 'n' to pass : ")
+
 
             if user_decision == 'y':
                 user_card.append(random.randint(1, 10))
@@ -27,6 +29,10 @@ while True:
 
             else:
                 print("please type correct value!!")
+
+            if sum(user_card)>21:
+                print("you loss!!")
+                break
 
         computers_card.append(random.randint(1, 10))
         print(f"your finel hand : {user_card}")

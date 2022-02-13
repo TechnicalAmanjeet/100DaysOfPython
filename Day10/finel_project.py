@@ -1,3 +1,4 @@
+import os
 
 from logo import logo
 
@@ -45,7 +46,7 @@ def calculator():
             num1 = answer
         else:
             should_continue = False
-            clear()
+            os.system("cls")
             calculator()
 
 

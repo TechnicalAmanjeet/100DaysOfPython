@@ -13,6 +13,7 @@ df = pd.read_csv("50_states.csv")
 state_list = df.state.tolist()
 state_x_cor = df.x.tolist()
 state_y_cor = df.y.tolist()
+print(state_list)
 
 # print(state_list, state_x_cor, state_y_cor)
 
@@ -40,6 +41,7 @@ game_is_on = True
 input_data = turtle.textinput(title=f"US States Game : {total_states_done}/{TOTAL_STATES}",
                               prompt="Enter States Name : ").capitalize()
 
+
 while game_is_on:
     if write_state(input_data):
         total_states_done += 1
@@ -50,5 +52,5 @@ while game_is_on:
     input_data = turtle.textinput(title=f"US States Game : {total_states_done}/{TOTAL_STATES}",
                                   prompt="Enter States Name : ").capitalize()
     
-screen.exitonclick()
-# screen.mainloop()
+# screen.exitonclick()
+screen.mainloop()

@@ -103,4 +103,23 @@ min_temp_row = temp_data[temp_data.temp == temp_data.temp.min()]
 
 # 6. get temp of monday and convert it to farenhite. (  celcius_temp * 9/5 + 32 = fahrenhite)
 monday_temp = float(temp_data[temp_data.day == "Monday"].temp * 9 / 5 + 32)
-print(f"Monday's temp in fahrenhite : {monday_temp}")
+# print(f"Monday's temp in fahrenhite : {monday_temp}")
+
+# final challenge => make dataframe from scratch.
+my_list = [
+    ["Amanjeet", 21, "Salarpur"],
+    ["Riya", 16, "Salarpur"],
+    ["Neha", 22, "Jhajha"],
+    ["Kajal", 22, "Maheshpur"],
+    ["Kismat", 21, "Bhirha"]
+]
+
+# import Jinja2
+
+# now i need to convert my list into dataframes.
+my_dataframe = pd.DataFrame(data=my_list, columns=["Name", "Age", "Village"])
+# print(my_dataframe)
+print(type(my_dataframe))
+# print(my_dataframe.values)
+print(my_dataframe.at[2, "Name"])
+# my_dataframe.to_csv("person.csv")

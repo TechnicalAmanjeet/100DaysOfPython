@@ -30,5 +30,8 @@ print(students_score_card)
 passed_students = [student for (student, student_score) in students_score_card.items() if student_score >= 60]
 print(passed_students)
 
+passed_students_dict = {student: student_score for (student, student_score) in students_score_card.items() if student_score >= 60}
+print(passed_students_dict)
+
 # for (student, score) in students_score_card.items():
 #     print(f"{student} : {score}")
